@@ -13,13 +13,27 @@
   }
   
   :root {
-    --brand: 27 96% 61%;
-    --brand-foreground: 31 97% 72%;
+    --brand: 0 0% 7%;
+    --brand-foreground: 0 0% 100%;
+    --primary: 0 0% 7%;
+    --primary-foreground: 0 0% 100%;
   }
   
   .dark {
-    --brand: 31 97% 72%;
-    --brand-foreground: 27 96% 61%;
+    --brand: 0 0% 100%;
+    --brand-foreground: 0 0% 7%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 7%;
+  }
+}
+
+@layer components {
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-white text-text placeholder:text-gray-400 focus:outline-none focus:border-text focus:ring-2 focus:ring-text/10 transition-all duration-200;
+  }
+  
+  .input-field:hover {
+    @apply border-gray-300;
   }
 }
 

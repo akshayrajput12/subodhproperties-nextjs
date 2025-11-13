@@ -47,12 +47,12 @@ export default function ContactPage() {
               <p className="text-muted">We'll get back to you soon.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
               <div>
                 <input
                   {...register('fullName', { required: 'Name is required' })}
                   placeholder="Full Name *"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-peach"
+                  className="input-field"
                 />
                 {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName.message}</p>}
               </div>
@@ -65,7 +65,7 @@ export default function ContactPage() {
                   })}
                   type="email"
                   placeholder="Email *"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-peach"
+                  className="input-field"
                 />
                 {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
               </div>
@@ -74,14 +74,14 @@ export default function ContactPage() {
                 <input
                   {...register('phone', { required: 'Phone is required' })}
                   placeholder="Phone *"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-peach"
+                  className="input-field"
                 />
                 {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
               </div>
 
               <select
                 {...register('interestedIn')}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-peach"
+                className="input-field"
               >
                 <option value="">Interested In</option>
                 <option value="Buying">Buying</option>
@@ -94,10 +94,12 @@ export default function ContactPage() {
                 {...register('message')}
                 placeholder="Your Message"
                 rows={4}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-peach"
+                className="input-field resize-none"
               />
 
-              <Button type="submit" className="w-full">Send Message</Button>
+              <Button type="submit" className="w-full bg-black hover:bg-black/90 text-white">
+                Send Message
+              </Button>
             </form>
           )}
         </div>

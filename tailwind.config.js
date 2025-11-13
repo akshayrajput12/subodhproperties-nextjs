@@ -13,6 +13,8 @@ module.exports = {
         muted: '#555555',
         brand: "hsl(var(--brand))",
         "brand-foreground": "hsl(var(--brand-foreground))",
+        primary: "hsl(var(--primary))",
+        "primary-foreground": "hsl(var(--primary-foreground))",
       },
       fontFamily: {
         heading: ['Poppins', 'sans-serif'],

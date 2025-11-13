@@ -56,7 +56,7 @@ export default function EnquiryForm({ propertyId, propertyTitle }: EnquiryFormPr
         <input
           {...register('fullName', { required: 'Name is required' })}
           placeholder="Full Name *"
-          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-peach"
+          className="input-field"
         />
         {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName.message}</p>}
       </div>
@@ -69,7 +69,7 @@ export default function EnquiryForm({ propertyId, propertyTitle }: EnquiryFormPr
           })}
           type="email"
           placeholder="Email *"
-          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-peach"
+          className="input-field"
         />
         {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
       </div>
@@ -78,14 +78,14 @@ export default function EnquiryForm({ propertyId, propertyTitle }: EnquiryFormPr
         <input
           {...register('phone', { required: 'Phone is required' })}
           placeholder="Phone *"
-          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-peach"
+          className="input-field"
         />
         {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
       </div>
 
       <select
         {...register('preferredContactMethod')}
-        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-peach"
+        className="input-field"
       >
         <option value="phone">Phone</option>
         <option value="email">Email</option>
@@ -96,7 +96,7 @@ export default function EnquiryForm({ propertyId, propertyTitle }: EnquiryFormPr
         {...register('message')}
         placeholder="Message"
         rows={4}
-        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-peach"
+        className="input-field resize-none"
         defaultValue={propertyTitle ? `I'm interested in ${propertyTitle}` : ''}
       />
 
@@ -104,15 +104,15 @@ export default function EnquiryForm({ propertyId, propertyTitle }: EnquiryFormPr
         <input
           {...register('consent', { required: 'You must accept terms' })}
           type="checkbox"
-          className="mt-1"
+          className="mt-1 w-4 h-4 accent-black cursor-pointer"
         />
-        <label className="text-sm text-muted">
+        <label className="text-sm text-muted cursor-pointer">
           I accept the terms and data policy *
         </label>
       </div>
       {errors.consent && <p className="text-red-500 text-sm">{errors.consent.message}</p>}
 
-      <Button type="submit" disabled={isSubmitting} className="w-full">
+      <Button type="submit" disabled={isSubmitting} className="w-full bg-black hover:bg-black/90 text-white">
         {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
       </Button>
     </form>
