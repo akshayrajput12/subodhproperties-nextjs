@@ -1,0 +1,29 @@
+Place property images in this directory structure:
+
+/images/man-apt-001/
+  - front.jpg
+  - living.jpg
+  - bedroom.jpg
+  - kitchen.jpg
+  - floorplan.jpg
+
+/images/man-apt-002/
+  - front.jpg
+  - living.jpg
+  - bedroom.jpg
+  - floorplan.jpg
+
+/images/man-villa-001/
+  - front.jpg
+  - living.jpg
+  - garden.jpg
+  - bedroom.jpg
+  - floorplan.jpg
+
+/images/agents/
+  - rohit.jpg
+  - priya.jpg
+
+For development, you can use placeholder images from services like:
+- https://placehold.co/800x600
+- https://picsum.photos/800/600
