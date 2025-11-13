@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import Loader from '@/components/Loader';
-import { HeroSection, MarqueeSection, FeaturedProperties, HomeAbout, WhyChooseUs, Testimonials } from '@/components/home';
+import { HeroSection, MarqueeSection, FeaturedProperties, HomeAbout, WhyChooseUs, Testimonials, FAQSection } from '@/components/home';
 import { CTASection } from '@/components/CTASection';
 
 export default function HomePage() {
@@ -27,6 +27,7 @@ export default function HomePage() {
           <HomeAbout />
           <WhyChooseUs />
           <Testimonials />
+          <FAQSection />
           <CTASection
             badge={{ text: "Get Started Today" }}
             title="Ready to Find Your Dream Property?"

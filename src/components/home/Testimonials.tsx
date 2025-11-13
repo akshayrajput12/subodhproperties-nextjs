@@ -6,7 +6,7 @@ import { firstColumn, secondColumn, thirdColumn } from "@/data/testimonials";
 
 const Testimonials = () => {
   return (
-    <section className="bg-background my-20 relative">
+    <section className="bg-gradient-to-br from-peach/30 via-white to-skysoft/30 py-16 relative">
       <div className="container z-10 mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
