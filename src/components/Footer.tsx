@@ -1,62 +1,140 @@
-import Link from 'next/link';
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+"use client";
+import Link from "next/link";
+import { Icons } from "@/components/ui/icons";
+import { Button } from "@/components/ui/button";
 
 export default function Footer() {
   return (
-    <footer className="bg-text text-white mt-20">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo & Tagline */}
-          <div>
-            <h3 className="text-2xl font-heading font-bold mb-4">
-              Subodh<span className="text-peach">Properties</span>
-            </h3>
-            <p className="text-gray-400">Your trusted partner in finding the perfect property.</p>
+    <footer className="py-12 px-4 md:px-6 bg-background">
+      <div className="container mx-auto">
+        <div className="flex flex-col md:flex-row justify-between">
+          <div className="mb-8 md:mb-0">
+            <Link href="/" className="flex items-center gap-2">
+              <Icons.logo className="icon-class w-8" />
+              <h2 className="text-lg font-bold">SubodhProperties</h2>
+            </Link>
+            <h1 className="dark:text-gray-300 mt-4">
+              Build by{" "}
+              <span className="dark:text-[#039ee4]">
+                <Link href="https://www.linkedin.com/in/1akshay/">@akshayparatapsingh</Link>
+              </span>
+            </h1>
+            <div className="mt-2">
+              <Link
+                href="https://x.com/compose/tweet?text=I%27ve%20been%20using%20%23SubodhProperties%20share%20your%20thought%20%40arihantCodes%20"
+              >
+                <Button variant="secondary">
+                  Share Your Thoughts On{" "}
+                  <Icons.twitter className="icon-class ml-1 w-3.5" />
+                </Button>
+              </Link>
+            </div>
+            <p className="text-sm dark:text-gray-400 mt-5">
+              © {new Date().getFullYear()} SubodhProperties. All rights reserved.
+            </p>
           </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-heading font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><Link href="/" className="text-gray-400 hover:text-peach transition-colors">Home</Link></li>
-              <li><Link href="/properties" className="text-gray-400 hover:text-peach transition-colors">Properties</Link></li>
-              <li><Link href="/about" className="text-gray-400 hover:text-peach transition-colors">About</Link></li>
-              <li><Link href="/contact" className="text-gray-400 hover:text-peach transition-colors">Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="font-heading font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>Phone: +91 9653814628</li>
-              <li>Email: info@realestate.com</li>
-              <li>Address: Jaipur, Rajasthan</li>
-            </ul>
-          </div>
-
-          {/* Social Links */}
-          <div>
-            <h4 className="font-heading font-semibold mb-4">Follow Us</h4>
-            <div className="flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-peach transition-colors" aria-label="Facebook">
-                <Facebook size={24} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-peach transition-colors" aria-label="Twitter">
-                <Twitter size={24} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-peach transition-colors" aria-label="Instagram">
-                <Instagram size={24} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-peach transition-colors" aria-label="LinkedIn">
-                <Linkedin size={24} />
-              </a>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="font-semibold mb-4">Pages</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="/"
+                    className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/properties"
+                    className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
+                  >
+                    Properties
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
+                  >
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
+                  >
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Socials</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="https://github.com/arihantcodes/spectrum-ui"
+                    className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
+                  >
+                    Github
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.linkedin.com/in/arihantcodes"
+                    className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
+                  >
+                    LinkedIn
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://x.com/arihantcodes"
+                    className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
+                  >
+                    X
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Legal</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="/privacy-policy"
+                    className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/tos"
+                    className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
+                  >
+                    Terms of Service
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Contact</h3>
+              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <li>Phone: +91 9653814628</li>
+                <li>Email: info@realestate.com</li>
+                <li>Address: Jaipur, Rajasthan</li>
+              </ul>
             </div>
           </div>
         </div>
-
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} SubodhProperties. All rights reserved.</p>
+        <div className="w-full flex mt-4 items-center justify-center">
+          <h1 className="text-center text-3xl md:text-5xl lg:text-[10rem] font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-700 to-neutral-900 select-none">
+            SubodhProperties
+          </h1>
         </div>
       </div>
     </footer>

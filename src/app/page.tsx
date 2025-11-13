@@ -8,6 +8,7 @@ import { getFeaturedProperties } from '@/data/properties';
 import Link from 'next/link';
 import Loader from '@/components/Loader';
 import Image from 'next/image';
+import { CTASection } from '@/components/CTASection';
 
 export default function HomePage() {
   const [loading, setLoading] = useState(true);
@@ -100,7 +101,7 @@ export default function HomePage() {
                   <motion.div
                     whileHover={{ scale: 1.03, rotateY: 5 }}
                     transition={{ duration: 0.5 }}
-                    className="relative w-full h-[500px] md:h-[550px] lg:h-[600px]"
+                    className="relative w-full h-[440px] md:h-[450px] lg:h-[500px]"
                     style={{ perspective: '1000px' }}
                   >
                     <motion.div
@@ -112,8 +113,8 @@ export default function HomePage() {
                       <Image
                         src="/images/hero-house.svg"
                         alt="Modern Property"
-                        width={800}
-                        height={800}
+                        width={700}
+                        height={700}
                         className="w-full h-full object-contain drop-shadow-2xl"
                         priority
                       />
@@ -186,17 +187,18 @@ export default function HomePage() {
           </section>
 
           {/* CTA Section */}
-          <section className="py-16 bg-peach">
-            <div className="container mx-auto px-4 text-center">
-              <h2 className="font-heading font-bold text-4xl mb-4">Ready to Find Your Home?</h2>
-              <p className="text-xl text-muted mb-8">Contact us today for personalized assistance</p>
-              <Link href="/contact">
-                <Button size="lg" variant="secondary">
-                  Get in Touch
-                </Button>
-              </Link>
-            </div>
-          </section>
+          <CTASection
+            badge={{ text: "Get Started Today" }}
+            title="Ready to Find Your Dream Property?"
+            description="Contact us today for personalized assistance and expert guidance in finding your perfect home"
+            action={{
+              text: "Get in Touch",
+              href: "/contact",
+              variant: "default"
+            }}
+            withGlow={true}
+            className="bg-gradient-to-br from-skysoft via-peach/30 to-peach"
+          />
         </motion.div>
       )}
     </>
